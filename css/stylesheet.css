@@ -1,0 +1,77 @@
+@charset "utf-8";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css");
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+
+/*본문스타일*/
+
+
+/*layout*/
+
+body {
+  font-family: 'Spoqa Han Sans';
+  font-weight: 400;
+}
+
+.wrapper {
+  background: silver;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /*뷰포트 세로 끝까지 늘려주겠다. */
+}
+
+
+/*한번에 특성 부여하기*/
+
+.header,
+.navigation,
+.main-contents,
+.slogan,
+.footer {
+  height: 100px;
+  width: 100%;
+}
+
+.header {
+  background: yellow;
+}
+
+.navigation {
+  background: pink;
+}
+
+.main-contents {
+  background: blue;
+}
+
+.slogan {
+  background: orange;
+}
+
+.footer {
+  background: lime;
+}
+
+
+/*mobile*/
+
+@media all and (max-width:999px) {
+  body {}
+}
+
+
+/*desk top*/
+
+@media all and (min-width:1000px) {
+  .wrapper {
+    align-items: center;
+  }
+  .header,
+  .navigation,
+  .main-contents,
+  .slogan,
+  .footer {
+    height: 100px;
+    width: 80%;
+  }
+}
