@@ -36,7 +36,6 @@ body {
 }
 
 .wrapper {
-  background: silver;
   display: flex;
   flex-direction: column;
   /*뷰포트 세로 끝까지 늘려주겠다. */
@@ -97,17 +96,11 @@ body {
     width: 80%;
   }
   .header {
-    background: yellow;
     position: relative;
     height: 300px;
   }
   .logo {
     padding: 1rem;
-    background: lime;
-    position: absolute;
-    left: 50px;
-    top: 50%;
-    transform: translateY(-50%)
   }
   .search {
     padding: 0 1rem 1rem 1rem;
@@ -145,8 +138,8 @@ body {
     width: 80%;
   }
   .header {
-    background: yellow;
     position: relative;
+    padding-bottom: 1rem;
   }
   .logo {
     position: absolute;
@@ -163,5 +156,24 @@ body {
     padding: 1rem 0.5rem;
     /* 위아래, 양옆 */
     margin-left: 0.5rem;
+  }
+  .search-wrap {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .search input {
+    width: 400px;
+    height: 35px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 0 0 0 1rem;
+    margin-right: 1rem;
+  }
+  .btn-search {
+    border: : 1px solid #aaa;
+    border-radius: 5px;
+    background: #988574;
+    color: #fff;
+    padding: 0 1rem;
   }
 }
