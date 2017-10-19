@@ -25,6 +25,14 @@ a:focus {
 }
 
 
+/* 반응형 콘텐츠 */
+
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+
 /* 본문 스타일 */
 
 body {
@@ -48,16 +56,197 @@ body {
   width: 100%;
 }
 
+
+/* 메인 콘텐츠 */
+
 .main-content {
-  background: blue;
+  padding: 0 1rem;
 }
 
-.slogan {
-  background: orange;
+
+/* 메인 콘텐츠 제목 공통 */
+
+.main-content-heading {
+  margin: 1rem 0;
+  padding-left: 65px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 60px;
+  background: url('images/sprite_main.png') no-repeat;
 }
 
-.footer {
-  background: lime;
+.en-heading {
+  display: block;
+}
+
+.recommend-book-heading span {
+  color: #abd375;
+}
+
+.news-heading span {
+  color: #e8ca58;
+}
+
+.board-heading span {
+  color: #c7b39a;
+}
+
+.favorite-site-heading span {
+  color: #eea60a;
+}
+
+.twitter-heading span {
+  color: #6aaee6;
+}
+
+.news-heading {
+  background-position: 0 -230px;
+}
+
+.board-heading {
+  background-position: 0 -115px;
+}
+
+.favorite-site-heading {
+  background-position: 0 -345px;
+}
+
+.twitter-heading {
+  background-position: 0 -460px;
+}
+
+
+/* 추천 서적 */
+
+.recommend-book,
+.news,
+.board,
+.favorite-site {
+  border-bottom: 2px solid #999;
+  padding-bottom: 1rem;
+}
+
+.recommend-book-cover {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.recommend-book-detail {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.recommend-book-detail dt,
+.recommend-book-detail dd {
+  display: inline;
+}
+
+.recommend-book-grade {
+  display: block!important;
+  color: #abd375;
+  font-size: 1.5rem;
+}
+
+
+/* 새소식 */
+
+.news p {
+  margin: 1rem 0;
+}
+
+.news time {
+  display: block;
+  text-align: right;
+}
+
+
+/* 게시판 */
+
+.board li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.board li a {
+  width: calc(100% - 100px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.board time {
+  display: block;
+  width: 100px;
+  text-align: right;
+}
+
+.board {
+  position: relative;
+}
+
+.board-more {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+}
+
+.board-more:before {
+  content: "+";
+  color: hsla(100, 100%, 20%, 1);
+  margin-right: 0.3rem;
+  font-weight: 700;
+}
+
+
+/* 인기 사이트 */
+
+.favorite-site ol {
+  overflow: hidden;
+}
+
+.favorite-site li {
+  counter-increment: number;
+}
+
+.favorite-site li:before {
+  content: counter(number, decimal);
+  background: #f00;
+  color: #fff;
+  font-size: 0.8rem;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+
+/* 트위터 */
+
+.twitter-profile {
+  width: 20%;
+  float: right;
+  text-align: right;
+}
+
+.twitter-profile img {
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+.twitter-date {
+  display: block;
+  clear: both;
+  text-align: right;
+}
+
+address,
+.copyright {
+  color: #fff;
+  margin: 0.5rem 0;
 }
 
 
@@ -79,7 +268,7 @@ body {
   .member a {
     display: block;
     padding: 0.5rem 1rem;
-    margin-left: 0.5rem;
+    margin-left: 0.5rem
   }
   .logo {
     padding: 1rem;
@@ -105,7 +294,7 @@ body {
   }
   .menubar-container {
     position: absolute;
-    top: 1rem;
+    top: 4rem;
     right: 1rem;
     width: 40px;
     height: 40px;
@@ -154,7 +343,7 @@ body {
     margin-top: -5px;
   }
   .menubar-act .menubar-middle {
-    transform: translatex(-100%) translatey(-5px);
+    transform: translateX(-100%) translateY(-5px);
   }
   .menubar-act .menubar-bottom {
     transform: rotate(-45deg);
@@ -173,9 +362,10 @@ body {
     padding: 2rem;
     box-sizing: border-box;
     transition: all 0.2s;
+    font-size: 10px;
   }
   .menu-act {
-    transform: translatex(0);
+    transform: translateX(0);
   }
   .sub-menu {
     list-style: circle;
@@ -183,6 +373,21 @@ body {
   }
   .sub-menu li {
     margin: 0.5rem 0;
+  }
+  .slogan {
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+  }
+  .slogan-heading {
+    position: absolute;
+    left: -9999rem;
+  }
+  .footer {
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+  }
+  address span {
+    display: block;
   }
 }
 
@@ -196,8 +401,7 @@ body {
   .header,
   .main-menu,
   .main-content,
-  .slogan,
-  .footer {
+  .slogan {
     width: 80%;
   }
   .header {
@@ -254,11 +458,74 @@ body {
     color: #fff;
   }
   .main-menu span {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     text-shadow: -1px 0 0 #000, 0 -1px 0 #000, 1px 0 0 #000, 0 1px 0 #000;
   }
   .sub-menu li {
     margin: 0.5rem 0 0.5rem 0.5rem;
+  }
+  .main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .recommend-book {
+    width: 34%;
+  }
+  .news {
+    width: 64%;
+  }
+  .board {
+    width: 36%;
+  }
+  .twitter {
+    width: 36%;
+  }
+  .twitter-profile {
+    padding-right: 1.2rem;
+  }
+  .favorite-site {
+    order: 1;
+  }
+  .favorite-site ol {
+    margin-left: 1.5rem;
+  }
+  .board,
+  .twitter,
+  .favorite-site {
+    margin: 20px 0;
+  }
+  .recommend-book,
+  .news,
+  .board,
+  .favorite-site {
+    border-bottom: 0;
+  }
+  .slogan {
+    padding: 1rem 0;
+    position: relative;
+  }
+  .slogan-heading {
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+    box-sizing: border-box;
+    width: 110px;
+    height: 83px;
+    padding-top: 83px;
+    overflow: hidden;
+    background: url('images/coffee.png') no-repeat;
+  }
+  .slogan-content {
+    margin: 0 3rem 0 10rem;
+  }
+  .slogan-content q {
+    font-weight: 700;
+  }
+  .footer {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem 1rem 1rem 15rem;
   }
 }

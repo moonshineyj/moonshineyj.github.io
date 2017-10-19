@@ -12,7 +12,7 @@ $(document).ready(function() {
     if (container.hasClass('menubar-act')) {
       btn.text('메인메뉴 닫기');
     } else {
-      btn.text('메인메뉴 닫기');
+      btn.text('메인메뉴 열기');
     }
   });
 });
